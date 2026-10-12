@@ -443,6 +443,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &418144974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 418144975}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &418144975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418144974}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.9, y: -0.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1546266172}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,6 +1533,7 @@ GameObject:
   - component: {fileID: 1546266170}
   - component: {fileID: 1546266169}
   - component: {fileID: 1546266173}
+  - component: {fileID: 1546266174}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -1649,6 +1681,7 @@ Transform:
   - {fileID: 1510029915}
   - {fileID: 272625348}
   - {fileID: 567163558}
+  - {fileID: 418144975}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1546266173
@@ -1667,6 +1700,20 @@ MonoBehaviour:
   jumpHeight: 9
   gravityScale: 1.5
   mainCamera: {fileID: 0}
+--- !u!114 &1546266174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546266167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ad09c4884fef441ac19ab4828e3a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayShoot
+  firePoint: {fileID: 418144975}
+  bulletPrefab: {fileID: 1065149322872025924, guid: 4d7ec1f69d54c0248aa05e67eb2ce221, type: 3}
 --- !u!1 &1992752614
 GameObject:
   m_ObjectHideFlags: 0
