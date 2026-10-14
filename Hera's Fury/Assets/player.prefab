@@ -211,12 +211,9 @@ GameObject:
   - component: {fileID: 4079892875501358168}
   - component: {fileID: 8301833601253905176}
   - component: {fileID: 3382210570822781458}
-  - component: {fileID: 7948463538277842811}
-  - component: {fileID: 242042656931501280}
-  - component: {fileID: 25675317225179847}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -380,48 +377,6 @@ MonoBehaviour:
   jumpHeight: 9
   gravityScale: 1.5
   mainCamera: {fileID: 0}
---- !u!114 &7948463538277842811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7554453411754014281}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75ad09c4884fef441ac19ab4828e3a35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayShoot
-  firePoint: {fileID: 7863897371857112625}
-  bulletPrefab: {fileID: 1065149322872025924, guid: 4d7ec1f69d54c0248aa05e67eb2ce221, type: 3}
---- !u!114 &242042656931501280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7554453411754014281}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b37ad41da86269b4387db144e89db4d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
---- !u!114 &25675317225179847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7554453411754014281}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f12c9bed54355ca4f98b8d93ca59e927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  bulletPrefab: {fileID: 1065149322872025924, guid: 4d7ec1f69d54c0248aa05e67eb2ce221, type: 3}
-  firePoint: {fileID: 6654683768118429624}
-  bulletSpeed: 20
-  fireRate: 0.25
 --- !u!1 &7773511768586527578
 GameObject:
   m_ObjectHideFlags: 0

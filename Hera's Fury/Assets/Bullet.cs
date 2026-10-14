@@ -15,17 +15,33 @@ public class Bullet: MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        //Simple hit logic (Can add damage here later)
-        if (hitInfo.CompareTag("Enemy"))
-        {
-            Destroy(hitInfo.gameObject); //Destroys the enemy
 
-            Destroy(gameObject); //Destroys the bullet
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(10); // Pass bullet damage configuration value
+            }
+            Destroy(gameObject); // Destroy the bullet
         }
-            
     }
+
+
+    /* private void OnTriggerEnter2D(Collider2D hitInfo)
+     {
+         //Simple hit logic (Can add damage here later)
+         if (hitInfo.CompareTag("Enemy"))
+         {
+             Destroy(hitInfo.gameObject); //Destroys the enemy
+
+             Destroy(gameObject); //Destroys the bullet
+         }
+
+     }
+    */
 
     // Update is called once per frame
     void Update()
