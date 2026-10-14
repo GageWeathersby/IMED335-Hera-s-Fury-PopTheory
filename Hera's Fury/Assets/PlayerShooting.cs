@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public Transform firePoint; // Where the bullet spawns (e.g., tip of the gun)
+    public Transform firePoint; // Where the bullet spawns (tip of crossbow)
     public float bulletSpeed = 20f;
     public float fireRate = 0.25f;
 
@@ -34,7 +34,7 @@ public class PlayerShooting : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = direction * bulletSpeed; // Use rb.velocity in older Unity versions
+            rb.linearVelocity = direction * bulletSpeed; 
         }
     }
 }
