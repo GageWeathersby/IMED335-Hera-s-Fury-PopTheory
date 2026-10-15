@@ -39,6 +39,7 @@ void Start()
 // Update is called once per frame
 void Update()
 {
+   
     // Movement controls
     if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
     {

@@ -2004,6 +2004,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 3190714754517762857, guid: 483978dd20460784ca484634c9ba6621, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3190714754517762857, guid: 483978dd20460784ca484634c9ba6621, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3190714754517762857, guid: 483978dd20460784ca484634c9ba6621, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5386991601082804649, guid: 483978dd20460784ca484634c9ba6621, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.42
@@ -2042,6 +2054,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5386991601082804649, guid: 483978dd20460784ca484634c9ba6621, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613597016291250279, guid: 483978dd20460784ca484634c9ba6621, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613597016291250279, guid: 483978dd20460784ca484634c9ba6621, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6874169523977762485, guid: 483978dd20460784ca484634c9ba6621, type: 3}
