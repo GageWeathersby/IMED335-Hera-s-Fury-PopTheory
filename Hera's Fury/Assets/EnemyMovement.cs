@@ -8,33 +8,44 @@ public class EnemyMovement : MonoBehaviour
     public Transform endPoint;
 
     private Vector3 targetPosition;
+    private Rigidbody2D rb;
 
     void Start()
     {
         // Set the starting position and initial target
+        rb = GetComponent<Rigidbody2D>();
         transform.position = startPoint.position;
         targetPosition = endPoint.position;
     }
 
+    void FixedUpdate()
+    {
+        float directionX = Mathf.Sign(targetPosition.x - transform.position.x);
+        //Moves the enemy 
+        rb.linearVelocity = new Vector2(directionX * moveSpeed, rb.linearVelocity.y);
+
+        // check if past target 
+        if ((directionX > 0 && transform.position.x >= targetPosition.x) ||
+          (directionX < 0 && transform.position.x <= targetPosition.x))
+        {
+            SwitchTarget();
+        }
+    }
+    void SwitchTarget()
+    {
+        if (targetPosition == endPoint.position)
+        {
+            targetPosition = startPoint.position;
+
+        }
+        else
+        {
+            targetPosition = endPoint.position;
+         }
+    }
     void Update()
     {
-        // Move frame-rate independently towards the active target
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-        // Switch targets when the enemy gets close enough to its current target
-        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
-        {
-            if (targetPosition == endPoint.position)
-            {
-                targetPosition = startPoint.position;
-                FlipSprite(true); // Flip to face left
-            }
-            else
-            {
-                targetPosition = endPoint.position;
-                FlipSprite(false); // Flip to face right
-            }
-        }
     }
 
     void FlipSprite(bool faceLeft)
