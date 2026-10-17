@@ -41,10 +41,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5386991601082804649}
   - component: {fileID: 3190714754517762857}
-  - component: {fileID: 6573210176969736699}
   - component: {fileID: 8179866488333026409}
   - component: {fileID: 1592341566234877288}
   - component: {fileID: -7206396068510699830}
+  - component: {fileID: 7225333390146227238}
   m_Layer: 0
   m_Name: Enemy Archer
   m_TagString: Enemy
@@ -65,6 +65,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7239066636126339022}
   - {fileID: 5613597016291250279}
   - {fileID: 6874169523977762485}
   - {fileID: 8216292985411605787}
@@ -104,24 +105,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.17, y: -0.7}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
---- !u!114 &6573210176969736699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2556682719999280375}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a1d4ff111da7bc4eabfc675c66fd513, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  moveSpeed: 2
-  startPoint: {fileID: 6874169523977762485}
-  endPoint: {fileID: 8216292985411605787}
 --- !u!50 &8179866488333026409
 Rigidbody2D:
   serializedVersion: 5
@@ -137,7 +123,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -156,7 +142,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2556682719999280375}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9af364eab16c4d408a8a3fdc8f412e3, type: 3}
   m_Name: 
@@ -167,9 +153,9 @@ MonoBehaviour:
   groundCheck: {fileID: 0}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   bulletPrefab: {fileID: 1065149322872025924, guid: ce9ef625934a3864f87f8d948cab75eb, type: 3}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 8672018190305963735, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
   fireRate: 2
 --- !u!114 &-7206396068510699830
 MonoBehaviour:
@@ -184,6 +170,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 30
+--- !u!114 &7225333390146227238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2556682719999280375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40306780b395a8b42b832aa16dc0677c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyShootingF
+  arrowPrefab: {fileID: 1065149322872025924, guid: ce9ef625934a3864f87f8d948cab75eb, type: 3}
+  fireRate: 2.5
 --- !u!1 &3671925057173919104
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,3 +307,66 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1001 &2030954490770264345
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5386991601082804649}
+    m_Modifications:
+    - target: {fileID: 8672018190305963735, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.71274996
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672018190305963735, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.24322999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672018190305963735, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672018190305963735, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672018190305963735, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672018190305963735, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672018190305963735, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672018190305963735, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672018190305963735, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672018190305963735, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994778206577070911, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+      propertyPath: m_Name
+      value: Crossbow 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1546436719923074927, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+--- !u!4 &7239066636126339022 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8672018190305963735, guid: 59f1401426b4f1c45bf3cb151f25dfcb, type: 3}
+  m_PrefabInstance: {fileID: 2030954490770264345}
+  m_PrefabAsset: {fileID: 0}
