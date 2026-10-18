@@ -10,6 +10,7 @@ public class EnemyBullet : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+   
         Destroy(gameObject, lifetime); // Self-destroy to clean memory leaks
     }
 
@@ -29,8 +30,8 @@ public class EnemyBullet : MonoBehaviour
         {
             // Call your Player's damage implementation here, e.g.:
             // collision.GetComponent<PlayerHealth>().TakeDamage(damage);
-
-            Destroy(gameObject);
+            Destroy(gameObject, 0.5f);
+            //Destroy(gameObject);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {

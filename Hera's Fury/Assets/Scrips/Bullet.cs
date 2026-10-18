@@ -3,6 +3,8 @@ public class Bullet: MonoBehaviour
 {
     public float speed = 20f;
 
+    public int damage = 10;
+
     public Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +25,7 @@ public class Bullet: MonoBehaviour
             EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
             if (enemy != null)
             {
-                enemy.TakeDamage(10); // Pass bullet damage configuration value
+                enemy.TakeDamage(damage); // Pass bullet damage configuration value
             }
             Destroy(gameObject); // Destroy the bullet
         }

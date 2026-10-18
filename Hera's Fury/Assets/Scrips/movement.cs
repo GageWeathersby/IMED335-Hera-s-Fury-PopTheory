@@ -11,7 +11,16 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 65f;
     public float gravityScale = 1.5f;
     public Camera mainCamera;
-    
+
+    //for player knockback
+    private Rigidbody2D rb;
+    private bool isBeingKnockedback = false;
+
+    [Header("Knockback Settings")]
+    [SerializeField] private float knockbackForce = 15f;
+    [SerializeField] private float knockbackDuration = 0.2f;
+
+
     bool facingRight = true;
     float moveDirection = 0;
     bool isGrounded = false;
@@ -19,6 +28,13 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
     Transform t;
+
+
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
 // Use this for initialization
 void Start()
@@ -39,9 +55,12 @@ void Start()
 // Update is called once per frame
 void Update()
 {
-   
-    // Movement controls
-    if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+
+        // Prevent player input from overriding physics during knockback
+        if (isBeingKnockedback) return;
+
+        // Movement controls
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
     {
         moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
     }
@@ -106,4 +125,38 @@ void FixedUpdate()
     Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(0, colliderRadius, 0), isGrounded ? Color.green : Color.red);
     Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(colliderRadius, 0, 0), isGrounded ? Color.green : Color.red);
 }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check if the object hitting the player is an enemy projectile
+        if (collision.CompareTag("EnemyBullet"))
+        {
+            // Calculate the push direction (from projectile to player)
+            Vector2 pushDirection = (transform.position - collision.transform.position).normalized;
+
+            // Apply the movement force
+            StartCoroutine(ApplyKnockback(pushDirection));
+
+            // Optional: Destroy the projectile after impact
+            Destroy(collision.gameObject);
+        }
+    }
+
+    private IEnumerator ApplyKnockback(Vector2 direction)
+    {
+        isBeingKnockedback = true;
+
+        // Clear existing velocity to make the push feel sharp and responsive
+        rb.linearVelocity = Vector2.zero;
+
+        // Apply a sudden impulse force
+        rb.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
+
+        // Wait for the duration of the push
+        yield return new WaitForSeconds(knockbackDuration);
+
+        isBeingKnockedback = false;
+    }
+
 }
