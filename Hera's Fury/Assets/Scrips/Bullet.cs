@@ -32,18 +32,7 @@ public class Bullet: MonoBehaviour
     }
 
 
-    /* private void OnTriggerEnter2D(Collider2D hitInfo)
-     {
-         //Simple hit logic (Can add damage here later)
-         if (hitInfo.CompareTag("Enemy"))
-         {
-             Destroy(hitInfo.gameObject); //Destroys the enemy
-
-             Destroy(gameObject); //Destroys the bullet
-         }
-
-     }
-    */
+ 
 
     // Update is called once per frame
     void Update()
